@@ -12,3 +12,5 @@ This repo is where I practice before doing the real labs.
 **Bold text** is done with two asterisks.
 
 Here is a link: [Microsoft Entra documentation](https://learn.microsoft.com/entra/)
+
+![A practice screenshot](screenshots/practice-shot.png)
