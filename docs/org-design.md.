@@ -1,1 +1,56 @@
+                       Group Design and Why Each Group Exists
+                         
+My group design uses a combination of department-based security groups and a role-based security group. The department groups provide a clear way to organize users according to the business function they belong to, while the role group handles access that is based on a specific job responsibility rather than department.
+
+
+SEC-Dept-Contractor — Exists to identify contractors separately from employees. Contractors have fixed contract end dates and may require different access and review processes. Separating them makes their access easier to identify, review, and remove when their contract ends.
+SEC-Dept-Executive — Exists for members of the executive team who require access associated with executive responsibilities and resources.
+SEC-Dept-Finance — Exists for Finance employees who need access to financial resources and applications required to perform payroll, invoicing, and other Finance responsibilities.
+SEC-Dept-HR — Exists for HR employees who manage employee-related processes such as onboarding and offboarding and therefore require access to HR resources.
+SEC-Dept-IT — Exists for IT employees who require access to technology and administrative resources necessary to support the organization's environment.
+SEC-Dept-Sales — Exists for Sales employees who require access to sales-related applications, data, and resources. This also makes it easier to manage access as the Sales team grows.
+SEC-Role-Helpdesk — Exists because Helpdesk access is based on a specific job role rather than simply belonging to a department. A user can belong to their department group and also be a member of this role group if their job requires Helpdesk permissions.
+
+
+                                           Why I Grouped by Department
+
+I chose department-based groups because Northwind Services is a small 16-person organization, and department is a practical way to organize access at this size. People in the same department generally have similar business needs, so assigning access at group level is easier to manage than assigning permissions individually to every user. It also makes onboarding, offboarding, auditing, and access reviews more consistent.
+
+The model would begin to strain as the company grows and people within the same department start having significantly different responsibilities. For example, two Finance employees might work in the same department but require different levels of access. Giving both users everything assigned to the Finance group could violate least privilege. At that point, I would introduce more role-based or resource-specific groups instead of relying on department membership alone.
+
+
+
+
+                                                 How I Handled Contractors
+
+I decided that contractors should have their own SEC-Dept-Contractor group because they are not employees and have fixed contract end dates. This provides a clear way to identify contractor accounts and makes their access easier to review and remove.
+
+The contractor group does not mean contractors automatically receive every permission that employees receive. If a contractor needs access to a department's resources, that access should be granted based on what they actually need to perform their work. Their contractor status provides an additional layer of visibility and lifecycle control rather than being a replacement for least-privilege decisions.
+
+
+
+                                    What I Would Do Differently with 500 People
+
+With 500 people, I would not rely primarily on department groups. I would move toward a more granular model using department, role, and resource-based groups.
+
+For example, instead of giving every Finance employee the same access, I could have separate groups for specific Finance responsibilities or applications. I would also establish formal group ownership, access reviews, automated joiner/mover/leaver processes, and stronger lifecycle controls for contractors and employees.
+
+The goal would be to make access based on what a person needs to do, rather than simply where they work in the organization. This would make the environment more scalable while maintaining least privilege.
+
+
+
+
+
+
+                                           What I Got Wrong and Fixed
+
+One thing I had to reconsider was how contractors should be handled. Initially, putting contractors directly into a department group could make it appear that they should receive the same access as employees in that department. I changed the design to give contractors their own SEC-Dept-Contractor group so their status is clearly identified.
+
+I also recognized that department membership alone does not automatically satisfy least privilege. A department group should represent a common business need, but access that is more sensitive or specialized should be separated into additional role- or resource-based groups. That is why SEC-Role-Helpdesk exists separately from SEC-Dept-IT.
+
+This version makes an important distinction: department groups organize people; role groups provide specialized access. That distinction is especially useful when explaining your design from an IAM and least-privilege perspective.
+
+
+
+
 
