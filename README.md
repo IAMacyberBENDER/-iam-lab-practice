@@ -1,4 +1,5 @@
 # Project Title
+Northwind Services — Microsoft Entra ID Identity and Access Management Lab
 
 ## Project Overview
 
