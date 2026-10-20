@@ -1,9 +1,9 @@
-#Group Design and Why Each Group Exists
+Group Design and Why Each Group Exists
                          
 My group design uses a combination of department-based security groups and a role-based security group. The department groups provide a clear way to organize users according to the business function they belong to, while the role group handles access that is based on a specific job responsibility rather than department.
 
 
-- ***SEC-Dept-Contractor*** — Exists to identify contractors separately from employees. Contractors have fixed contract end dates and may require different access and review processes. Separating them makes their access easier to identify, review, and remove when their contract ends.
+SEC-Dept-Contractor— Exists to identify contractors separately from employees. Contractors have fixed contract end dates and may require different access and review processes. Separating them makes their access easier to identify, review, and remove when their contract ends.
 SEC-Dept-Executive — Exists for members of the executive team who require access associated with executive responsibilities and resources.
 SEC-Dept-Finance — Exists for Finance employees who need access to financial resources and applications required to perform payroll, invoicing, and other Finance responsibilities.
 SEC-Dept-HR — Exists for HR employees who manage employee-related processes such as onboarding and offboarding and therefore require access to HR resources.
