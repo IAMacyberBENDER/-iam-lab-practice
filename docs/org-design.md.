@@ -1,4 +1,4 @@
-Group Design and Why Each Group Exists
+ Group Design and Why Each Group Exists
                          
 My group design uses a combination of department-based security groups and a role-based security group. The department groups provide a clear way to organize users according to the business function they belong to, while the role group handles access that is based on a specific job responsibility rather than department.
 
